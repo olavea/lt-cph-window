@@ -11,11 +11,13 @@ const style = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundImage: 'linear-gradient(0deg, #6EB1B5 0%, #544C85 100%)',
     backgroundColor: '#f5f6f5',
   },
   main: {
     margin: '2em 1em',
+    background: 'white',
+    padding: '2em',
+    position: 'relative',
   },
 }
 
