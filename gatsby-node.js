@@ -6,6 +6,12 @@
 
 // You can delete this file if you're not using it
 
+const keyFromFileName = fileName => {
+  const regex = /\d+/
+  const match = fileName.match(regex)
+  return match ? match[0] : fileName
+}
+
 exports.createPages = async ({ graphql, actions: { createPage } }) => {
   const {
     data: { audioFilesQuery },
@@ -27,7 +33,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
   )
 
   const allAudioFiles = audioFilesQuery.edges.map(edge => ({
-    key: edge.node.name,
+    key: keyFromFileName(edge.node.name),
     src: edge.node.publicURL,
   }))
 
