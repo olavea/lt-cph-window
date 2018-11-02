@@ -1,39 +1,7 @@
 import React, { Component } from 'react'
-
-const style = {
-  root: {
-    display: 'flex',
-    margin: 0,
-    fontSize: '2em',
-  },
-  input: {
-    display: 'block',
-    width: '4em',
-    flexGrow: 0,
-    textAlign: 'center',
-    background: '#333',
-    color: 'white',
-    border: 'none',
-    borderRadius: 5,
-  },
-  inputDisabled: {
-    color: 'gray',
-  },
-  button: {
-    display: 'block',
-    fontSize: '1em',
-    width: '2em',
-    height: '2em',
-    background: '#333',
-    color: 'white',
-    border: 'none',
-    borderRadius: 5,
-    marginLeft: '0.3em',
-  },
-  buttonInvalid: {
-    color: 'gray',
-  },
-}
+import classNames from 'classnames'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlay, faStop } from '@fortawesome/free-solid-svg-icons'
 
 const defaultState = {
   input: '',
@@ -112,43 +80,43 @@ class PlayerControls extends Component {
   }
 
   render() {
-    const playIcon = '&#9658'
-    const stopIcon = '&#9724'
-
-    const buttonIcon = this.isPlaying() ? stopIcon : playIcon
-    const buttonStyle = this.isValidInput()
-      ? style.button
-      : {
-          ...style.button,
-          ...style.buttonInvalid,
-        }
-
-    const inputStyle = !this.isPlaying()
-      ? style.input
-      : {
-          ...style.input,
-          ...style.inputDisabled,
-        }
     return (
-      <form style={style.root} onSubmit={this.onSubmit}>
-        <input
-          style={inputStyle}
-          ref={this.inputElement}
-          pattern="[0-9]*"
-          type="text"
-          disabled={this.isDisabled() || this.isPlaying()}
-          value={this.state.input}
-          onChange={this.onChange}
-        />
-        <button
-          style={buttonStyle}
-          ref={this.buttonElement}
-          type="submit"
-          disabled={this.isDisabled()}
-          dangerouslySetInnerHTML={{
-            __html: buttonIcon,
-          }}
-        />
+      <form
+        style={{ padding: '2em', borderRadius: '5px' }}
+        className="has-background-white"
+        onSubmit={this.onSubmit}
+      >
+        <div className="field is-grouped">
+          <div className="control">
+            <input
+              className={classNames(
+                'input is-large is-narrow has-text-centered',
+                {
+                  'is-disabled': this.isPlaying(),
+                }
+              )}
+              ref={this.inputElement}
+              pattern="[0-9]*"
+              type="text"
+              disabled={this.isDisabled() || this.isPlaying()}
+              value={this.state.input}
+              onChange={this.onChange}
+            />
+          </div>
+
+          <div className="control">
+            <button
+              className={classNames('button is-large', {
+                'is-static': !this.isValidInput(),
+              })}
+              ref={this.buttonElement}
+              type="submit"
+              disabled={this.isDisabled()}
+            >
+              <FontAwesomeIcon icon={this.isPlaying() ? faStop : faPlay} />
+            </button>
+          </div>
+        </div>
       </form>
     )
   }

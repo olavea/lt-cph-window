@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+@import '../../node_modules/bulma/bulma.sass';
+
+.columns.is-vertically-centered {
+  align-items: center;
+}
+
+.fill-parent {
+  width: 100%;
+  height: 100%;
+}
+
+.center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+.block {
+  margin: 2em;
+  border-radius: $radius-large;
+}
+
+.input.is-narrow {
+  width: 4em;
+}
