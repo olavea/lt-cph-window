@@ -84,7 +84,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
     createPage({
       path: edge.node.fields.slug,
       component: require.resolve('./src/templates/page.js'),
-      context: { slug: edge.node.fields.slug },
+      context: { slug: edge.node.fields.slug, allAudioFiles },
     })
   })
 }
