@@ -4,6 +4,11 @@ module.exports = {
     description: '',
     keywords: '',
     lang: 'no',
+    mainNav: [
+      { label: 'Hjelp', path: 'hjelp' },
+      { label: 'Info', path: 'info' },
+    ],
+    pageNav: [{ label: 'Tilbake', path: '/' }],
   },
   plugins: [
     'gatsby-plugin-sass',
@@ -11,15 +16,32 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `audio`,
+        path: `${__dirname}/content/audio`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `audio`,
-        path: `${__dirname}/src/audio`,
+        path: `${__dirname}/content/pages/`,
+        name: 'page',
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-plugin-sharp`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+              backgroundColor: 'transparent',
+            },
+          },
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
+        ],
       },
     },
     'gatsby-transformer-sharp',

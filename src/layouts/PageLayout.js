@@ -6,14 +6,14 @@ import RootLayout from './RootLayout'
 import Hero from '../components/Hero'
 import Nav from '../components/Nav'
 
-const DefaultLayout = ({ children }) => (
+const PageLayout = ({ children }) => (
   <StaticQuery
     query={graphql`
-      query DefaultLayoutTitleQuery {
+      query PageLayoutTitleQuery {
         site {
           siteMetadata {
             title
-            mainNav {
+            pageNav {
               label
               path
             }
@@ -22,13 +22,12 @@ const DefaultLayout = ({ children }) => (
       }
     `}
     render={data => {
-      const title = data.site.siteMetadata.title
-      const nav = data.site.siteMetadata.mainNav
+      const nav = data.site.siteMetadata.pageNav
       return (
         <RootLayout>
-          <Hero isCentered title={title}>
-            {children}
+          <Hero>
             <Nav items={nav} />
+            {children}
           </Hero>
         </RootLayout>
       )
@@ -36,8 +35,8 @@ const DefaultLayout = ({ children }) => (
   />
 )
 
-DefaultLayout.propTypes = {
+PageLayout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default DefaultLayout
+export default PageLayout

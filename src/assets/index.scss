@@ -3,18 +3,36 @@
 $widescreen-enabled: false;
 $fullhd-enabled: false;
 
+$white-ter: hsl(0, 0%, 96%);
+
+$body-background-color: $white-ter;
+
 @import '../../node_modules/bulma/bulma.sass';
+
+.container {
+  max-width: 32em;
+}
+
+.nav {
+  margin: 0.5em -0.5em;
+  .nav-item {
+    text-transform: lowercase;
+    display: inline-block;
+    margin: 0.5em;
+    color: $grey;
+    transition: color 0.3s;
+    &:hover {
+      color: $black;
+      transition: color 0.3s;
+    }
+  }
+}
 
 .columns.is-vertically-centered {
   align-items: center;
 }
 
-.fill-parent {
-  width: 100%;
-  height: 100%;
-}
-
-.center-content {
+.has-centered-content {
   display: flex;
   align-items: center;
   justify-content: center;

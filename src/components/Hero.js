@@ -1,9 +1,16 @@
 import React from 'react'
+import classNames from 'classnames'
 
-const Hero = ({ children }) => (
-  <div className="hero is-fullheight is-light">
+const Hero = ({ isCentered, children }) => (
+  <div className="hero is-fullheight">
     <div className="hero-body">
-      <div className="container center-content">{children}</div>
+      <div
+        className={classNames('container', {
+          'has-centered-content': isCentered,
+        })}
+      >
+        {children}
+      </div>
     </div>
   </div>
 )

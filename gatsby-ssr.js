@@ -8,7 +8,6 @@
 
 import React from 'react'
 
-import DefaultLayout from './src/layouts/DefaultLayout'
 import Player from './src/components/Player'
 
 export const wrapPageElement = ({ element, props }) => {
@@ -19,20 +18,18 @@ export const wrapPageElement = ({ element, props }) => {
   } = props
 
   return (
-    <DefaultLayout {...props}>
-      <Player audioFiles={allAudioFiles}>
-        {({ play, pause, isPlaying, isValidAudioFileKey, selectedKey }) =>
-          React.cloneElement(element, {
-            play: play,
-            pause: pause,
-            isPlaying: isPlaying,
-            isValidAudioFileKey: isValidAudioFileKey,
-            selectedKey: selectedKey,
-            key: 'SSR',
-            isDisabled: true,
-          })
-        }
-      </Player>
-    </DefaultLayout>
+    <Player audioFiles={allAudioFiles}>
+      {({ play, pause, isPlaying, isValidAudioFileKey, selectedKey }) =>
+        React.cloneElement(element, {
+          play: play,
+          pause: pause,
+          isPlaying: isPlaying,
+          isValidAudioFileKey: isValidAudioFileKey,
+          selectedKey: selectedKey,
+          key: 'SSR',
+          isDisabled: true,
+        })
+      }
+    </Player>
   )
 }
