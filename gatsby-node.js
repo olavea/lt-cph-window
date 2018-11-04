@@ -74,7 +74,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
   // Create a home page and add the array of audio objects to its context.
   createPage({
     path: `/`,
-    component: require.resolve('./src/templates/player.js'),
+    component: require.resolve('./src/templates/home.js'),
     context: { allAudioFiles },
   })
 
