@@ -13,6 +13,7 @@ const RootLayout = ({ children }) => (
           siteMetadata {
             title
             description
+            image
           }
         }
       }
@@ -25,6 +26,14 @@ const RootLayout = ({ children }) => (
             {
               name: 'description',
               content: data.site.siteMetadata.description,
+            },
+            {
+              property: 'og:title',
+              content: data.site.siteMetadata.title,
+            },
+            {
+              property: 'og:image',
+              content: data.site.siteMetadata.image,
             },
           ]}
         >
