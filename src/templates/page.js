@@ -1,9 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../layouts/PageLayout'
+import PageLayout from '../layouts/PageLayout'
+import DefaultLayout from '../layouts/DefaultLayout'
 
 export default props => {
   const page = props.data.markdownRemark
+  const Layout = props.pageContext.slug === '/404/' ? DefaultLayout : PageLayout
   return (
     <Layout {...props}>
       <div className="content">
