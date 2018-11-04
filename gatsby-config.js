@@ -1,9 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Ting vi synes er spændende',
-    description: '',
+    description: 'En fin og kort beskrivelse.',
     image: `${process.env.DEPLOY_PRIME_URL}/some.jpg`,
-    keywords: '',
     lang: 'da',
     mainNav: [{ label: 'Info', path: 'info' }],
     pageNav: [{ label: 'Tilbage', path: '/' }],
