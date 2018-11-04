@@ -112,6 +112,7 @@ class PlayerControls extends Component {
               ref={this.buttonElement}
               type="submit"
               disabled={this.isDisabled()}
+              style={{ pointerEvents: 'all' }}
             >
               <FontAwesomeIcon icon={this.isPlaying() ? faStop : faPlay} />
             </button>
