@@ -4,10 +4,7 @@ module.exports = {
     description: '',
     keywords: '',
     lang: 'no',
-    mainNav: [
-      { label: 'Hjelp', path: 'hjelp' },
-      { label: 'Info', path: 'info' },
-    ],
+    mainNav: [{ label: 'Info', path: 'info' }],
     pageNav: [{ label: 'Tilbake', path: '/' }],
   },
   plugins: [
@@ -44,6 +41,7 @@ module.exports = {
         ],
       },
     },
+    'gatsby-plugin-catch-links',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
