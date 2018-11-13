@@ -65,8 +65,9 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
     `
   )
 
+  const audioEdges = audioFilesQuery ? audioFilesQuery.edges : []
   // Transform edges into an array of audio objects.
-  const allAudioFiles = audioFilesQuery.edges.map(edge => ({
+  const allAudioFiles = audioEdges.map(edge => ({
     key: keyFromAudioFileName(edge.node.name),
     src: edge.node.publicURL,
   }))
