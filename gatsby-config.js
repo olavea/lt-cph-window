@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Ting vi synes er spændende',
-    description: 'En fin og kort beskrivelse.',
+    title: '... og siden har jeg haft den',
+    description: 'En udstilling af Berger Lylloff Huseby.',
     image: `${process.env.DEPLOY_PRIME_URL}/some.jpg`,
     lang: 'da',
     mainNav: [{ label: 'Info', path: 'info' }],
