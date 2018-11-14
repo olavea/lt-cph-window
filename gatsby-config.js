@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: '... og siden har jeg haft den',
     description:
-      'En udstilling af Berger Lylloff Huseby. Udstillingen kan du se i Atelier Ahorn i København i perioden 16. november til 14. december 2018. Adressen er Borups allé 29.',
+      'En udstilling af Berger Lylloff Huseby i Atelier Ahorn, København.',
     image: `${process.env.DEPLOY_PRIME_URL}/some.jpg`,
     lang: 'da',
     mainNav: [{ label: 'Info', path: 'info' }],
