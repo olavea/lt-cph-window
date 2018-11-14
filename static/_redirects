@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+https://lt-ogsiden.netlify.com/* https://ogsiden.bergerlylloffhuseby.dk/:splat 301!
