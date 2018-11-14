@@ -47,13 +47,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Ting vi synes er vakre',
-        short_name: 'Ting',
+        name: '... og siden har jeg haft den',
+        short_name: '...',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#518159',
+        theme_color: '#518159',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: 'static/icon.jpg', // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-offline',
