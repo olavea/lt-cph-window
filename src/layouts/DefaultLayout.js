@@ -26,7 +26,8 @@ const DefaultLayout = ({ children }) => (
       const nav = data.site.siteMetadata.mainNav
       return (
         <RootLayout>
-          <Hero isCentered title={title}>
+          <Hero isCentered>
+            <h1 class="title is-5">{title}</h1>
             {children}
             <Nav items={nav} />
           </Hero>
