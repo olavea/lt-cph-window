@@ -11,7 +11,12 @@ const defaultState = {
 class PlayerControls extends Component {
   state = {
     ...defaultState,
-    input: this.props.selectedKey || defaultState.input,
+    input:
+      this.props.selectedKey === -1
+        ? defaultState.input
+        : this.props.selectedKey ||
+          this.props.pageContext.selectedKey ||
+          defaultState.input,
   }
   inputElement = React.createRef()
   buttonElement = React.createRef()

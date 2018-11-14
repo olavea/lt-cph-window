@@ -79,6 +79,14 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
     context: { allAudioFiles },
   })
 
+  allAudioFiles.map(audioFile => {
+    createPage({
+      path: `${audioFile.key}`,
+      component: require.resolve('./src/templates/home.js'),
+      context: { allAudioFiles, selectedKey: audioFile.key },
+    })
+  })
+
   // Loop through all the markdown nodes.
   // Create a page for each and add the slug to its context.
   allMarkdownQuery.edges.map(edge => {

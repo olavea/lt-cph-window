@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { navigate } from 'gatsby'
 
 const defaultState = {
   playing: null,
@@ -33,6 +34,7 @@ class Player extends Component {
       this.audioElements[key].currentTime = 0
     }
     this.audioElements[key].play()
+    navigate(key)
   }
 
   isValidAudioFileKey = key => {
@@ -57,7 +59,7 @@ class Player extends Component {
         break
       case 'ended':
         this.setState({
-          selectedKey: defaultState.selectedKey,
+          selectedKey: -1,
           playing: false,
         })
         break
