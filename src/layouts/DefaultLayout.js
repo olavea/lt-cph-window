@@ -27,7 +27,7 @@ const DefaultLayout = ({ children }) => (
       return (
         <RootLayout>
           <Hero isCentered>
-            <h1 class="title is-5">{title}</h1>
+            <h1 className="title is-5">{title}</h1>
             {children}
             <Nav items={nav} />
           </Hero>
