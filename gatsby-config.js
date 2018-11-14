@@ -48,7 +48,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: '... og siden har jeg haft den',
-        short_name: '...',
+        short_name: '... og siden',
         start_url: '/',
         background_color: '#518159',
         theme_color: '#518159',
