@@ -9,7 +9,16 @@ $body-background-color: $white-ter;
 
 @import '../../node_modules/bulma/bulma.sass';
 
+.background {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background: url('/tapet.jpg');
+  background-size: cover;
+}
+
 .content {
+  overflow-y: auto;
   a {
     color: inherit;
     text-decoration: underline;
@@ -23,7 +32,7 @@ $body-background-color: $white-ter;
 }
 
 .container {
-  max-width: 32em;
+  max-width: 36em;
 }
 
 .nav {
@@ -50,12 +59,20 @@ $body-background-color: $white-ter;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  overflow: scroll;
 }
 
 .block {
-  margin: 2em;
+  padding: 2em;
   border-radius: $radius-large;
+  &.is-light {
+    padding-top: 1em;
+    background: $body-background-color;
+  }
+  &.is-transparent {
+    margin: 0 auto;
+    background: rgba($body-background-color, 0.7);
+    padding-bottom: 0;
+  }
 }
 
 .input.is-narrow {
