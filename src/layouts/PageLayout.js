@@ -26,8 +26,10 @@ const PageLayout = ({ children }) => (
       return (
         <RootLayout>
           <Hero>
-            <Nav items={nav} />
-            {children}
+            <div className="block is-light">
+              <Nav items={nav} />
+              {children}
+            </div>
           </Hero>
         </RootLayout>
       )

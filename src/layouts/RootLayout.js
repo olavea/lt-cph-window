@@ -39,6 +39,7 @@ const RootLayout = ({ children }) => (
         >
           <html lang={data.site.siteMetadata.lang} />
         </Helmet>
+        <div className="background" />
         {children}
       </>
     )}
