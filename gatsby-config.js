@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: '... og siden har jeg haft den',
+    title: 'Norway Yacht Charter Audio Guide Demo',
     description:
       'En udstilling af Berger Lylloff Huseby i Atelier Ahorn, København.',
     image: `${process.env.DEPLOY_PRIME_URL}/some.jpg`,
