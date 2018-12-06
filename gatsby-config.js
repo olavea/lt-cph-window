@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: 'Norway Yacht Charter Audio Guide Demo',
     description:
-      'En udstilling af Berger Lylloff Huseby i Atelier Ahorn, København.',
-    image: `${process.env.DEPLOY_PRIME_URL}/some.jpg`,
+      'En Audio Guide Demo fra Lutter Øre og Lilly Labs',
+    image: false, //`${process.env.DEPLOY_PRIME_URL}/some.jpg`,
     lang: 'da',
     mainNav: [{ label: 'Info', path: 'info' }],
     pageNav: [{ label: 'Tilbage', path: '/' }],
@@ -55,8 +55,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: '... og siden har jeg haft den',
-        short_name: '... og siden',
+        name: 'Audio Guide Demo',
+        short_name: 'Audio Guide Demo',
         start_url: '/',
         background_color: '#518159',
         theme_color: '#518159',
