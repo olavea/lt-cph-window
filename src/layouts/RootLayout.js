@@ -32,8 +32,8 @@ const RootLayout = ({ children }) => (
               content: data.site.siteMetadata.title,
             },
             {
-              property: 'og:image',
-              content: data.site.siteMetadata.image,
+              //property: 'og:image',
+              //content: data.site.siteMetadata.image,
             },
           ]}
         >
