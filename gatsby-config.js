@@ -3,7 +3,7 @@ module.exports = {
     title: 'Norway Yacht Charter Audio Guide Demo',
     description:
       'En Audio Guide Demo fra Lutter Øre og Lilly Labs',
-    image: false, //`${process.env.DEPLOY_PRIME_URL}/some.jpg`,
+    image: `${process.env.DEPLOY_PRIME_URL}/some.jpg`,
     lang: 'da',
     mainNav: [{ label: 'Info', path: 'info' }],
     pageNav: [{ label: 'Tilbage', path: '/' }],
