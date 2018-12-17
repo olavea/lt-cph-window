@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: '... og siden har jeg haft den',
-    description:
-      'En udstilling af Berger Lylloff Huseby i Atelier Ahorn, København.',
+    title: 'Geff the Giraffe',
+    description: 'A book by Andreas Brox-Fadum.',
+    // change some later
     image: `${process.env.DEPLOY_PRIME_URL}/some.jpg`,
     lang: 'da',
     mainNav: [{ label: 'Info', path: 'info' }],
@@ -23,6 +23,13 @@ module.exports = {
       options: {
         name: `audio`,
         path: `${__dirname}/content/audio`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `image`,
+        path: `${__dirname}/content/images`,
       },
     },
     {
@@ -67,7 +74,7 @@ module.exports = {
     'gatsby-plugin-offline',
   ],
 }
-  // ?Ola asks: add
+// ?Ola asks: add
 //  {
 //    resolve: `gatsby-source-filesystem`,
 //    options: {

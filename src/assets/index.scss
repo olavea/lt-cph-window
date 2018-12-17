@@ -8,7 +8,7 @@ $white-ter: hsl(0, 0%, 96%);
 $body-background-color: $white-ter;
 
 @import '../../node_modules/bulma/bulma.sass';
-
+// this is not the right place to get the image I presume?
 .background {
   position: fixed;
   height: 100vh;

@@ -29,9 +29,14 @@ const DefaultLayout = ({ children }) => (
           <Hero isCentered>
             <div className="block is-transparent has-centered-content">
               <h1 className="title is-5">{title}</h1>
+
               {children}
               <Nav items={nav} />
             </div>
+            <img
+              src="https://wpuploads.appadvice.com/wp-content/uploads/2011/06/Screen-shot-2011-06-14-at-8.06.59-PM-300x224.png"
+              alt="studio5dekor, studio 5 dekor, Susanne Schwarz Hoset"
+            />
           </Hero>
         </RootLayout>
       )

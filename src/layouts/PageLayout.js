@@ -28,6 +28,7 @@ const PageLayout = ({ children }) => (
           <Hero>
             <div className="block is-light">
               <Nav items={nav} />
+
               {children}
             </div>
           </Hero>
