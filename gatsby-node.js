@@ -8,6 +8,8 @@
 
 const { createFilePath } = require('gatsby-source-filesystem')
 
+// ?Ola asks: make no changes here?
+
 const keyFromAudioFileName = fileName => {
   const regex = /\d+/
   const match = fileName.match(regex)
@@ -34,10 +36,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
-
+// ?Ola asks: add /*imageFilesQuery*/
+// ?Ola asks: and make an actual query?
 exports.createPages = async ({ graphql, actions: { createPage } }) => {
   const {
-    data: { audioFilesQuery, allMarkdownQuery },
+    data: { audioFilesQuery, allMarkdownQuery, /*imageFilesQuery*/ },
   } = await graphql(
     `
       query {
@@ -64,7 +67,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
       }
     `
   )
-
+// ?Ola asks: make no changes here?
   const audioEdges = audioFilesQuery ? audioFilesQuery.edges : []
   // Transform edges into an array of audio objects.
   const allAudioFiles = audioEdges.map(edge => ({
@@ -73,11 +76,14 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
   }))
 
   // Create a home page and add the array of audio objects to its context.
+// ? I will need to /*allImageFiles*/ below  to get "1-image-1-page"?
   createPage({
     path: `/`,
     component: require.resolve('./src/templates/home.js'),
-    context: { allAudioFiles },
+    context: { allAudioFiles /*allImageFiles*/ },
   })
+  // ? I will need to copy the code below  to get "1-image-1-page"?
+
 
   allAudioFiles.map(audioFile => {
     createPage({
@@ -89,6 +95,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
 
   // Loop through all the markdown nodes.
   // Create a page for each and add the slug to its context.
+  // ?Ola asks: ? I will need to make some changes here to get "1-image-1-page"?
   allMarkdownQuery.edges.map(edge => {
     createPage({
       path: edge.node.fields.slug,

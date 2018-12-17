@@ -6,6 +6,7 @@ const defaultState = {
   selectedKey: null,
 }
 
+// ?Ola asks: maybe I don´t need images in the player?
 class Player extends Component {
   state = defaultState
   audioElements = {}

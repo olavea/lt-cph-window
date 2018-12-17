@@ -67,3 +67,10 @@ module.exports = {
     'gatsby-plugin-offline',
   ],
 }
+  // ?Ola asks: add
+//  {
+//    resolve: `gatsby-source-filesystem`,
+//    options: {
+//      name: `image`,
+//      path: `${__dirname}/content/images`,
+//    },
