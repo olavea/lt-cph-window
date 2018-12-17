@@ -8,13 +8,15 @@ $white-ter: hsl(0, 0%, 96%);
 $body-background-color: $white-ter;
 
 @import '../../node_modules/bulma/bulma.sass';
-// this is not the right place to get the image I presume?
+
 .background {
   position: fixed;
   height: 100vh;
   width: 100vw;
-  background: url('/tapet.jpg');
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  z-index: -10;
 }
 
 .content {
