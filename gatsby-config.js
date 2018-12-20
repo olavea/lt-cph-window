@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Geff the Giraffe',
-    description: 'A book by Andreas Brox-Fadum.',
+    title: 'Sjiraffen Samuel',
+    description: 'En bok av Andreas Brox-Fadum.',
     // change some later
     image: `${process.env.DEPLOY_PRIME_URL}/some.jpg`,
     lang: 'da',
